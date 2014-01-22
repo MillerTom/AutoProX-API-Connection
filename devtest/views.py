@@ -30,7 +30,6 @@ def get_list(request):
     """
     Initializes the API connection and returns pending applications' list.
     """
-    # TODO: Pagination for long results
 
     return Response(api.get_pending_apps())
 
@@ -41,7 +40,6 @@ def new_application(request):
     When an application posted, forwards the request to the API module,
     If request was successful renders the message from API.
     """
-    # TODO: Ajax requests
 
     res = api.add_new_application(request)
     if res:
