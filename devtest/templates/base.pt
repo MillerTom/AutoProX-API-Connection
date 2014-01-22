@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:tal="http://xml.zope.org/namespaces/tal"
+       xmlns:metal="http://xml.zope.org/namespaces/metal">
+ <head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="">
+     <meta name="author" content="">
+     <link rel="shortcut icon" href="${request.static_url('devtest:static/img/favicon.ico')}">
+
+     <title>AutoProX</title>
+
+     <!-- Bootstrap core CSS -->
+     <link href="${request.static_url('devtest:static/css/bootstrap.min.css')}" rel="stylesheet">
+     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+     <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+     <style type="text/css">
+      .css-form input.ng-invalid.ng-dirty {
+        background-color: rgba(250, 120, 126, 0.63);
+      }
+
+      .css-form input.ng-valid.ng-dirty {
+        background-color: #64c764;
+      }
+    </style>
+    <script src="${request.static_url('devtest:static/js/angular.min.js')}"></script>
+    <script src="${request.static_url('devtest:static/js/app.js')}"></script>
+ </head>
+   <body>
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">AutoProX API</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/api/add-app">Add Application</a></li>
+            <li><a href="/api/app-list">Pending Applications</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+      <div id="content" ng-app="AutoProx" ng-controller='MainController' class="container" style="padding: 80px;">
+          <div class="row">
+              <div class="col-lg-12">
+                  <span metal:define-slot="content"></span>
+              </div>
+          </div>
+      </div>
+      <div class="footer">
+          <div class="row">
+              <div class="col-lg-12">
+
+              </div>
+          </div>
+      </div>
+   </body>
+ </html>

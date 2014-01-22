@@ -1,0 +1,43 @@
+<div metal:use-macro="load: base.pt">
+<span metal:fill-slot="content">
+    <div class="row">
+        <div class="col-lg-6">
+            <h3 style="color: rgba(26, 131, 46, 0.69)"><i class="fa fa-plus"></i> ${title}</h3>
+            <hr>
+            <form novalidate name="form" class="css-form">
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                    <label for="ApplicationName"><i class="fa fa-asterisk"></i> Application Name</label>
+                    <input type="text" class="form-control" id="ApplicationName" name="ApplicationName" placeholder="Enter application name" ng-model="formData.ApplicationName" required>
+                    <p ng-show="appForm.ApplicationName.$invalid && !appForm.ApplicationName.$pristine" class="help-block">Application name is required.</p>
+                </div>
+                <div class="form-group">
+                    <label for="VersionInformation"><i class="fa fa-asterisk"></i> Version Information</label>
+                    <input type="text" class="form-control" id="VersionInformation" name="VersionInformation" placeholder="Enter your version info" ng-model="formData.VersionInformation" required>
+                </div>
+                <div class="form-group">
+                    <label for="ApplicationWebsite"><i class="fa fa-asterisk"></i> Application Website</label>
+                    <input type="text" class="form-control" id="ApplicationWebsite" name="ApplicationWebsite" placeholder="Enter your app's website" ng-model="formData.ApplicationWebsite" required>
+                </div>
+                <div class="form-group">
+                    <label for="DownloadLink"><i class="fa fa-asterisk"></i> Download Link</label>
+                    <input type="text" class="form-control" id="DownloadLink" name="DownloadLink" placeholder="Enter a download link for your app" ng-model="formData.DownloadLink" required>
+                </div>
+                <div class="form-group">
+                    <label for="ClientNames"><i class="fa fa-asterisk"></i> Client Names</label>
+                    <input type="text" class="form-control" id="ClientNames" name="ClientNames" placeholder="Enter client name" ng-model="formData.ClientNames" required>
+                </div>
+                <div class="form-group">
+                    <label for="AdditionalNotes"><i class="fa fa-asterisk"></i> Additional Notes</label>
+                    <input type="text" class="form-control" id="AdditionalNotes" name="AdditionalNotes" placeholder="Notes about your app" ng-model="formData.AdditionalNotes" required>
+                </div>
+                <div class="form-group">
+                    <label for="RequestedBy"><i class="fa fa-asterisk"></i> Requested By</label>
+                    <input type="text" class="form-control" id="RequestedBy" name="RequestedBy" placeholder="Enter your name" ng-model="formData.RequestedBy" required>
+                </div>
+
+                <button ng-click="submit()" ng-disabled="form.$invalid || button != 'Submit'" class="btn btn-success btn-block">{{button}}</button>
+            </form>
+        </div>
+    </div>
+</span>
+</div>

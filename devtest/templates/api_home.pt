@@ -1,0 +1,8 @@
+<div metal:use-macro="load: base.pt">
+<span metal:fill-slot="content">
+    <h1>${project_name}</h1>
+    <hr>
+    <a href="/api/add-app" class="btn btn-primary" style="margin-right: 10px;">Add New Application</a>
+    <a class="btn btn-primary" href="/api/app-list">Check Pending Applications</a>
+</span>
+</div>

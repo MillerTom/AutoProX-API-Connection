@@ -1,0 +1,21 @@
+<div metal:use-macro="load: base.pt">
+<span metal:fill-slot="content">
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>${title} - <em>{{loading}}</em></h3>
+        </div>
+        <div class="col-lg-3" ng-show="result" style="margin-top: 20px;">
+            <em>Sort By:</em>
+            <a href="" ng-click="predicate = 'ApplicationName'; reverse=!reverse"  class="btn btn-primary btn-sm">Name</a>
+            <a href="" ng-click="predicate = 'RequestedDateTimeUTC'; reverse=!reverse" class="btn btn-primary btn-sm">Date</a>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px">
+        <div class="img-rounded col-lg-4" ng-repeat="app in result | orderBy:predicate:reverse" style="margin-right: 20px; padding-left: 10px;">
+            <h4><i class="fa fa-asterisk"></i> {{app.ApplicationName}}</h4>
+            <p><i class="fa fa-calendar-o"></i> {{app.RequestedDateTimeUTC}}</p>
+            <p style="color: rgb(191, 88, 88)"><em>Status: {{app.Status}}</em></p>
+        </div>
+    </div>
+</span>
+</div>
