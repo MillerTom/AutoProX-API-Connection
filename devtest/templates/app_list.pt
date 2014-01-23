@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row" style="margin-top: 20px">
-        <div class="img-rounded col-lg-4" ng-repeat="app in result | orderBy:predicate:reverse" style="margin-right: 20px; padding-left: 10px;">
+        <div class="img-rounded col-lg-4" ng-repeat="app in result track by $index | orderBy:predicate:reverse" style="margin-right: 20px; padding-left: 10px;">
             <h4><i class="fa fa-asterisk"></i> {{app.ApplicationName}}</h4>
             <p><i class="fa fa-calendar-o"></i> {{app.RequestedDateTimeUTC}}</p>
             <p style="color: rgb(191, 88, 88)"><em>Status: {{app.Status}}</em></p>
